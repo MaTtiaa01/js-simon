@@ -5,7 +5,7 @@
 
 Da lì parte un timer di 30 secondi. 
 Dopo 30 secondi i numeri scompaiono e l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt(). 
-    -attraverso setInterval do un delay di 30 secondi alla funzione che mi farà poi togliere i numeri dallo schermo
+    -attraverso setTimeout do un delay di 30 secondi alla funzione che mi farà poi togliere i numeri dallo schermo
     -inserisco i prompt sempre all'interno della funzione sopra, probabilmente con un ciclo for
 
 Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
@@ -16,6 +16,7 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 */
 
 const numbElement = document.querySelector(".number");
+const userNumberArr = [];
 
 function generateNumber(max) {
    return Math.floor(Math.random() * max);
@@ -37,5 +38,20 @@ while (randomNumberArr.length !== 5) {
 let numberString = randomNumberArr.join(" ");
 console.log(numberString);
 
+//stampo a schermo
 numbElement.innerHTML = numberString;
+
+//timer
+const timer = setTimeout(function(){
+    numbElement.innerHTML = "";
+    for (let i = 0; i < 6; i++) {
+        const userNumber = prompt("Inserire un numero");
+        userNumberArr.push(userNumber);  
+    }
+}, 1000)
+
+console.log(userNumberArr);
+
+
+
 
