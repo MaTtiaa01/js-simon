@@ -62,39 +62,50 @@ console.log(randomNumberArr);
  * @param {array} array2 
  */
 
-function compareArray(array1,array2) {
-    const comparedArray = [];
-    array1.forEach((e1) => array2.forEach((e2) => {
-        if (e1 === e2) {
-            comparedArray.push(e1)
-        }
-    }))
-    return comparedArray
-    // let element;
-    // let element2;
-    // for (let a = 0; a < array1.length; a++) {
-    //     element = array1[a];
-    //     //console.log(element);
-    // }
-
-    // for (let b = 0; b < array2.length; b++) {
-    //     element2 = array2[b];
-    //     //console.log(element2);
-    // }
-
-    // if (element === element2) {
-    //     comparedArray.push(element)
-    //     console.log(comparedArray);
-    // }
-}
-
-function numberWin(){
-    const rightNumber = compareArray(randomNumberArr,userNumberArr);
-    return rightNumber
-}
-
-console.log(numberWin());
-
-
-
-
+//function compareArray(array1,array2) {
+    
+    //const comparedArray = array1.filter(element => array2.includes(element))
+    //return comparedArray
+    
+    
+    // #### second solution tried####
+    // const comparedArray = [];
+    // array1.forEach((e1) => array2.forEach((e2) => {
+        //     if (e1 === e2) {
+            //         comparedArray.push(e1)
+            //     }
+            // }))
+            // return comparedArray;
+            
+            //###first solution tried###
+            // let element;
+            // let element2;
+            // for (let a = 0; a < array1.length; a++) {
+                //     element = array1[a];
+                //     //console.log(element);
+                // }
+                
+                // for (let b = 0; b < array2.length; b++) {
+                    //     element2 = array2[b];
+                    //     //console.log(element2);
+                    // }
+                    
+                    // if (element === element2) {
+                        //     comparedArray.push(element)
+                        //     console.log(comparedArray);
+                        // }
+ //}
+                    
+const comparedArray = randomNumberArr.filter(element => userNumberArr.includes(element))
+console.log(comparedArray);
+                    
+// function numberWin(){
+//      const rightNumber = compareArray(randomNumberArr,userNumberArr);
+//     return rightNumber
+// }
+                    
+// console.log(numberWin());
+                    
+                    
+                    
+                    
