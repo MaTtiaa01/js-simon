@@ -17,12 +17,13 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 
 const numbElement = document.querySelector(".number");
 const userNumberArr = [];
+const randomNumberArr = [];
+
 
 function generateNumber(max) {
    return Math.floor(Math.random() * max);
 }
 
-const randomNumberArr = [];
 let randomNumberPc = 0;
 while (randomNumberArr.length !== 5) {
     randomNumberPc = generateNumber(100);
@@ -48,10 +49,52 @@ const timer = setTimeout(function(){
         const userNumber = prompt("Inserire un numero");
         userNumberArr.push(userNumber);  
     }
-}, 1000)
+}, 2000)    //#####cambia in 30000
 
 console.log(userNumberArr);
+console.log(randomNumberArr);
+
+// stampo i numeri presi
+
+/**
+ * 
+ * @param {array} array1 
+ * @param {array} array2 
+ */
+
+function compareArray(array1,array2) {
+    const comparedArray = [];
+    array1.forEach((e1) => array2.forEach((e2) => {
+        if (e1 === e2) {
+            comparedArray.push(e1)
+        }
+    }))
+    return comparedArray
+    // let element;
+    // let element2;
+    // for (let a = 0; a < array1.length; a++) {
+    //     element = array1[a];
+    //     //console.log(element);
+    // }
+
+    // for (let b = 0; b < array2.length; b++) {
+    //     element2 = array2[b];
+    //     //console.log(element2);
+    // }
+
+    // if (element === element2) {
+    //     comparedArray.push(element)
+    //     console.log(comparedArray);
+    // }
+}
+
+const numberWin = setTimeout(function(){
+    const rightNumber = compareArray(userNumberArr,randomNumberArr);
+    return rightNumber
+},3000)
 
 
+
+console.log(numberWin);
 
 
