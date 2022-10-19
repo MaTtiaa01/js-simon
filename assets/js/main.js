@@ -45,7 +45,7 @@ numbElement.innerHTML = numberString;
 //timer
 const timer = setTimeout(function(){
     numbElement.innerHTML = "";
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 0; i < 5; i++) {
         const userNumber = prompt("Inserire un numero");
         userNumberArr.push(userNumber);  
     }
@@ -89,7 +89,7 @@ function compareArray(array1,array2) {
 }
 
 function numberWin(){
-    const rightNumber = compareArray(userNumberArr,randomNumberArr);
+    const rightNumber = compareArray(randomNumberArr,userNumberArr);
     return rightNumber
 }
 
