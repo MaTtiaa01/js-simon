@@ -16,6 +16,7 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 */
 
 const numbElement = document.querySelector(".number");
+const scoreElement = document.querySelector(".score");
 //const userNumberArr = [];
 const randomNumberArr = [];
 const finalArray = [];
@@ -43,15 +44,18 @@ let numberString = randomNumberArr.join(" ");
 numbElement.innerHTML = numberString;
 
 //timer
+let count = 0;
 const timer = setTimeout(function(){
     numbElement.innerHTML = "";
     for (let i = 0; i < 5; i++) {
         const userNumber = Number( prompt("Inserire un numero"));
         if (randomNumberArr.includes(userNumber)) {
             finalArray.push(userNumber)
+            count++
         }
     }
-    numbElement.innerHTML = 'I numeri giusti che hai scelto sono:' + finalArray.join(" ") ;
+    numbElement.innerHTML = 'I numeri giusti che hai scelto sono: ' + finalArray.join(" ") ;
+    scoreElement.innerHTML = 'Il tuo punteggio è di: ' + count;
 }, 2000)    //#####cambia in 30000
 
 console.log(randomNumberArr);
