@@ -16,9 +16,9 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 */
 
 const numbElement = document.querySelector(".number");
-const userNumberArr = [];
+//const userNumberArr = [];
 const randomNumberArr = [];
-
+const finalArray = [];
 
 function generateNumber(max) {
    return Math.floor(Math.random() * max);
@@ -37,7 +37,7 @@ while (randomNumberArr.length !== 5) {
 //console.log(randomNumberArr);
 //utilizzo join per togliere le virgole e rendere i miei numeri una stringa da stampare a schermo
 let numberString = randomNumberArr.join(" ");
-console.log(numberString);
+//console.log(numberString);
 
 //stampo a schermo
 numbElement.innerHTML = numberString;
@@ -46,65 +46,29 @@ numbElement.innerHTML = numberString;
 const timer = setTimeout(function(){
     numbElement.innerHTML = "";
     for (let i = 0; i < 5; i++) {
-        const userNumber = prompt("Inserire un numero");
-        userNumberArr.push(userNumber);  
+        const userNumber = Number( prompt("Inserire un numero"));
+        if (randomNumberArr.includes(userNumber)) {
+            finalArray.push(userNumber)
+        }
     }
 }, 2000)    //#####cambia in 30000
 
-console.log(userNumberArr);
 console.log(randomNumberArr);
+console.log(finalArray);
 
 // stampo i numeri presi
 
-/**
- * 
- * @param {array} array1 
- * @param {array} array2 
- */
+// #### altra soluzione ###             
+// const comparedArray = randomNumberArr.filter(element => userNumberArr.includes(element))
 
-//function compareArray(array1,array2) {
-    
-    //const comparedArray = array1.filter(element => array2.includes(element))
-    //return comparedArray
-    
-    
-    // #### second solution tried####
-    // const comparedArray = [];
-    // array1.forEach((e1) => array2.forEach((e2) => {
-        //     if (e1 === e2) {
-            //         comparedArray.push(e1)
-            //     }
-            // }))
-            // return comparedArray;
-            
-            //###first solution tried###
-            // let element;
-            // let element2;
-            // for (let a = 0; a < array1.length; a++) {
-                //     element = array1[a];
-                //     //console.log(element);
-                // }
-                
-                // for (let b = 0; b < array2.length; b++) {
-                    //     element2 = array2[b];
-                    //     //console.log(element2);
-                    // }
-                    
-                    // if (element === element2) {
-                        //     comparedArray.push(element)
-                        //     console.log(comparedArray);
-                        // }
- //}
-                    
-const comparedArray = randomNumberArr.filter(element => userNumberArr.includes(element))
-console.log(comparedArray);
-                    
-// function numberWin(){
-//      const rightNumber = compareArray(randomNumberArr,userNumberArr);
-//     return rightNumber
+// const mioArr = [];
+// for(let i = 0; i < randomNumberArr.length; i++) {
+//     if (userNumberArr.includes(randomNumberArr[i]) ) {
+//         mioArr.push()
+//     }
 // }
-                    
-// console.log(numberWin());
+
+
                     
                     
                     
