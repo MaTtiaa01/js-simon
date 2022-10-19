@@ -45,8 +45,12 @@ numbElement.innerHTML = numberString;
 
 //timer
 let count = 0;
-const timer = setTimeout(function(){
+const emptyDom = setTimeout(function(){
     numbElement.innerHTML = "";
+},30000)
+
+const timer = setTimeout(function(){
+    
     for (let i = 0; i < 5; i++) {
         const userNumber = Number( prompt("Inserire un numero"));
         if (randomNumberArr.includes(userNumber)) {
@@ -56,7 +60,7 @@ const timer = setTimeout(function(){
     }
     numbElement.innerHTML = 'I numeri giusti che hai scelto sono: ' + finalArray.join(" ") ;
     scoreElement.innerHTML = 'Il tuo punteggio è di: ' + count;
-}, 2000)    //#####cambia in 30000
+}, 31000)    //#####cambia in 30000
 
 console.log(randomNumberArr);
 console.log(finalArray);
