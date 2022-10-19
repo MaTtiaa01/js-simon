@@ -51,10 +51,12 @@ const timer = setTimeout(function(){
             finalArray.push(userNumber)
         }
     }
+    numbElement.innerHTML = 'I numeri giusti che hai scelto sono:' + finalArray.join(" ") ;
 }, 2000)    //#####cambia in 30000
 
 console.log(randomNumberArr);
 console.log(finalArray);
+
 
 // stampo i numeri presi
 
