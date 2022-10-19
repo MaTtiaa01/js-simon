@@ -14,3 +14,28 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
         -se il numero è contenuto nell'array allora lo stampo e aumento il counter del punteggio di 1
         -altrimenti niente
 */
+
+const numbElement = document.querySelector(".number");
+
+function generateNumber(max) {
+   return Math.floor(Math.random() * max);
+}
+
+const randomNumberArr = [];
+let randomNumberPc = 0;
+while (randomNumberArr.length !== 5) {
+    randomNumberPc = generateNumber(100);
+    //console.log(randomNumberPc);
+    if (!randomNumberArr.includes(randomNumberPc)) {
+        randomNumberArr.push(randomNumberPc)
+    }
+    
+    
+}
+//console.log(randomNumberArr);
+//utilizzo join per togliere le virgole e rendere i miei numeri una stringa da stampare a schermo
+let numberString = randomNumberArr.join(" ");
+console.log(numberString);
+
+numbElement.innerHTML = numberString;
+
